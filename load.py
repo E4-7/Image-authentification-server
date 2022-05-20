@@ -23,10 +23,9 @@ class ImageProcessing:
         text = pytesseract.image_to_string(Image.open(filename), lang = 'Hangul')
         text = text.replace(" ", "")  # 띄어쓰기 제거
         os.remove(filename)
-        if len(text) > 1 and str(id) or name in text :
-            print("id scan success")
-            face = self.cropFace(img,gray)
-            return face
+        if str(id) in text or name in text :
+            #face = self.cropFace(img,gray)
+            return 1
   
         else:
             return -1

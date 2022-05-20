@@ -63,5 +63,5 @@ async def upload_image(
             #print(res)
             return {'url':'http://naver.com' } 
     except Exception as e:
-        print('POST /image error: %e' % type(e))
-        return JSONResponse(status_code=500,detail=e)
+        print(f"Unexpected {e=}, {type(e)=}")
+        return JSONResponse(status_code=500)
